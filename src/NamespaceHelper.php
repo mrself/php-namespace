@@ -93,4 +93,14 @@ class NamespaceHelper
     {
         return static::fromSource($this->source);
     }
+
+    public function last()
+    {
+        return $this->source[count($this->source) - 1];
+    }
+
+    public function first()
+    {
+        return $this->source[0];
+    }
 }

@@ -98,4 +98,16 @@ class NamespaceTest extends TestCase
         $ns1->append('b');
         $this->assertEquals(['a'], $ns2->get());
     }
+
+    public function testLast()
+    {
+        $ns = NamespaceHelper::from(['a', 'b']);
+        $this->assertEquals('b', $ns->last());
+    }
+
+    public function testFirst()
+    {
+        $ns = NamespaceHelper::from(['a', 'b']);
+        $this->assertEquals('a', $ns->first());
+    }
 }
