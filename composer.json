@@ -1,0 +1,16 @@
+{
+  "name": "mrself/namespace",
+  "autoload": {
+    "psr-4": {
+      "Mrself\\NamespaceHelper\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mrself\\NamespaceHelper\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5"
+  }
+}
