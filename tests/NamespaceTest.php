@@ -110,4 +110,16 @@ class NamespaceTest extends TestCase
         $ns = NamespaceHelper::from(['a', 'b']);
         $this->assertEquals('a', $ns->first());
     }
+
+    public function testToUnderscore()
+    {
+        $ns = NamespaceHelper::from(['A', 'b']);
+        $this->assertEquals('a_b', $ns->toUnderscore());
+    }
+
+    public function testCamelize()
+    {
+        $ns = NamespaceHelper::from(['a', 'b']);
+        $this->assertEquals('aB', $ns->camelize());
+    }
 }

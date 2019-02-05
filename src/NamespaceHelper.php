@@ -62,6 +62,20 @@ class NamespaceHelper
         return implode('\\', $this->source);
     }
 
+    public function toUnderscore(): string
+    {
+        $source = array_map('strtolower', $this->source);
+        return implode('_', $source);
+    }
+
+    public function camelize()
+    {
+        $firstPart = array_shift($this->source);
+        $source = array_map('ucfirst', $this->source);
+        array_unshift($source, $firstPart);
+        return implode('', $source);
+    }
+
     public function get()
     {
         return $this->source;
