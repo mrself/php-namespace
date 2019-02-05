@@ -57,9 +57,13 @@ class NamespaceHelper
         return implode('/', $source);
     }
 
-    public function toNamespace(): string
+    public function toNamespace(bool $ucfirst = true): string
     {
-        return implode('\\', $this->source);
+        $source = $this->source;
+        if ($ucfirst) {
+            $source = array_map('ucfirst', $source);
+        }
+        return implode('\\', $source);
     }
 
     public function toUnderscore(): string

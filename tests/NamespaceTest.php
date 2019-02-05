@@ -122,4 +122,16 @@ class NamespaceTest extends TestCase
         $ns = NamespaceHelper::from(['a', 'b']);
         $this->assertEquals('aB', $ns->camelize());
     }
+
+    public function testToNamespaceWithUcfirstTrue()
+    {
+        $ns = NamespaceHelper::from(['a', 'b']);
+        $this->assertEquals('A\\B', $ns->toNamespace());
+    }
+
+    public function testToNamespaceWithUcfirstFalse()
+    {
+        $ns = NamespaceHelper::from(['a', 'b']);
+        $this->assertEquals('a\\b', $ns->toNamespace(false));
+    }
 }
