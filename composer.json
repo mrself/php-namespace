@@ -5,6 +5,9 @@
       "Mrself\\NamespaceHelper\\": "src/"
     }
   },
+  "require": {
+    "php": "^7.2"
+  },
   "autoload-dev": {
     "psr-4": {
       "Mrself\\NamespaceHelper\\Tests\\": "tests/"
