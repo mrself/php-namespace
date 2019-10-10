@@ -98,12 +98,17 @@ class NamespaceHelper
 
     /**
      * @param $part
+     * @param int|string $index
      * @return $this
      */
-    public function append($part)
+    public function append($part, $index = null)
     {
-        $part = (array) $part;
-        $this->source = array_merge($this->source, $part);
+        if (null === $index) {
+            $part = (array) $part;
+            $this->source = array_merge($this->source, $part);
+        } else {
+            array_splice($this->source, $index, 0 , $part);
+        }
         return $this;
     }
 

@@ -79,18 +79,6 @@ class NamespaceTest extends TestCase
         $this->assertEquals(['b', 'a'], $ns->prepend(['b'])->get());
     }
 
-    public function testAppendString()
-    {
-        $ns = NamespaceHelper::from(['a']);
-        $this->assertEquals(['a', 'b'], $ns->append('b')->get());
-    }
-
-    public function testAppendArray()
-    {
-        $ns = NamespaceHelper::from(['a']);
-        $this->assertEquals(['a', 'b'], $ns->append(['b'])->get());
-    }
-
     public function testClone()
     {
         $ns1 = NamespaceHelper::from(['a']);
