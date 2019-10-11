@@ -25,6 +25,13 @@ class NamespaceTest extends TestCase
         $this->assertEquals(['a', 'b'], $ns->get());
     }
 
+    public function testFromNamespace()
+    {
+        $namespace = 'Class1\\Class2\\Class3';
+        $ns = NamespaceHelper::fromNamespace($namespace);
+        $this->assertEquals(['Class1', 'Class2', 'Class3'], $ns->get());
+    }
+
     public function testToDotted()
     {
         $ns = NamespaceHelper::from(['a', 'b']);

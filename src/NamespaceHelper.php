@@ -29,6 +29,11 @@ class NamespaceHelper
         return static::fromSource(explode('.', $source));
     }
 
+    public static function fromNamespace(string $namespace)
+    {
+        return static::fromSource(explode('\\', $namespace));
+    }
+
     public function toDotted(): string
     {
         return implode('.', $this->source);
